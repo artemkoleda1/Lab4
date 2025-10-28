@@ -26,3 +26,22 @@ def multiplication_trainer():
                 else:
                     print(f"Неверно! Правильно: {correct_result} (Время: {time_spent:.1f} сек)")
                 break
+
+            except ValueError:
+                end_time = time.time()
+                time_spent = end_time - start_time
+                total_time += time_spent
+                print("Пожалуйста, введите целое число!")
+
+    # Вывод статистики
+    print("\n" + "=" * 30)
+    print("СТАТИСТИКА:")
+    print("=" * 30)
+    print(f"Общее время: {total_time:.1f} секунд")
+    print(f"Среднее время на вопрос: {total_time / n:.1f} сек")
+    print(f"Правильных ответов: {correct_answers}/{n}")
+    print(f"Процент правильных: {correct_answers / n * 100:.1f}%")
+
+
+# Запуск программы
+multiplication_trainer()
